@@ -1,12 +1,17 @@
 package com.priyam.quantumassignment
 
+
+
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,4 +49,6 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
+
+
 }

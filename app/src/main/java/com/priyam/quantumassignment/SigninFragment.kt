@@ -12,7 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import com.facebook.CallbackManager
+import com.facebook.*
+import com.facebook.login.LoginResult
+import com.facebook.login.widget.LoginButton
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -25,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import org.json.JSONObject
 import java.lang.Exception
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -37,19 +40,25 @@ class SigninFragment : Fragment() {
 
     lateinit var buttonSignin: Button
     lateinit var googleImage: ImageView
-    lateinit var fbLoginBtn: Button
+    lateinit var loginButton: LoginButton
     lateinit var editEmailSignin: EditText
     lateinit var editPassSignin: EditText
     private lateinit var auth: FirebaseAuth
 
     lateinit var callbackManager: CallbackManager
+    private val EMAIL = "email"
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        FacebookSdk.sdkInitialize(requireContext()) //new
 
         val view: View = inflater.inflate(R.layout.fragment_signin, container, false)
 
@@ -75,20 +84,60 @@ class SigninFragment : Fragment() {
             GooglesignIn()
         }
 
-        callbackManager = CallbackManager.Factory.create()
 
-        fbLoginBtn = view.findViewById(R.id.fbLoginBtn)
+
         printHashKey()
 
-        fbLoginBtn.setPermission(listOf("email","public_profile","user_gender",
-            "user_birthday","user_friends"))
-        fbLoginBtn.registerCallback
-        fbLoginBtn.setOnClickListener {
-            fbSignIn()
-        }
+        callbackManager = CallbackManager.Factory.create()
+        loginButton = view.findViewById<LoginButton>(R.id.fbLoginBtn)
+
+        loginButton.setPermissions(listOf("email","public_profile"))
+        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+            override fun onCancel() {
+                TODO("Not yet implemented")
+            }
+
+            override fun onError(error: FacebookException) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onSuccess(result: LoginResult) {
+                val graphRequest = GraphRequest.newMeRequest(result?.accessToken){`object`,response ->
+                    getFacebookData(`object`)
+                }
+                val parameters = Bundle()
+                parameters.putString("fields" , "email")
+                graphRequest.parameters = parameters
+                graphRequest.executeAsync()
+
+                moveToHome()
+
+
+            }
+
+
+        })
+
+
+
 
         return view
     }
+
+    private fun moveToHome() {
+        Log.d("HOME", "moveToHome: arrived")
+    }
+
+    private fun getFacebookData(obj: JSONObject?) {
+
+        Log.d("GETFACEBOOKDATA", "getFacebookData: ")
+        val profilePic = "https://graph.facebook.com/${obj?.getString("id")}/picture?width=200&height=200"
+//can use glide to load image
+
+        Log.d("FBTAG", "getFacebookData: $profilePic")
+
+    }
+
 
     private fun printHashKey() {
         try {
@@ -110,9 +159,7 @@ class SigninFragment : Fragment() {
 
     }
 
-    private fun fbSignIn() {
 
-    }
 
     private fun GooglesignIn() {
 
@@ -166,6 +213,8 @@ class SigninFragment : Fragment() {
                                 )
                                     .show()
 
+                                moveToHome()
+
 
                             } else {
                                 Toast.makeText(
@@ -209,6 +258,8 @@ class SigninFragment : Fragment() {
                                 Toast.LENGTH_SHORT
                             )
                                 .show()
+                            moveToHome()
+
                         } else {
                             Toast.makeText(context, "Authentication failed.", Toast.LENGTH_SHORT)
                                 .show()
