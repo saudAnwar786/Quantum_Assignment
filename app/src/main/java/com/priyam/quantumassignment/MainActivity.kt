@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: MyFragmentAdapter
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"))
         tabLayout.addTab(tabLayout.newTab().setText("Sign Up"))
 
-        val fragmentManager : FragmentManager = supportFragmentManager
+        val fragmentManager: FragmentManager = supportFragmentManager
         adapter = MyFragmentAdapter(fragmentManager, lifecycle)
         viewPager2.adapter = adapter
 
