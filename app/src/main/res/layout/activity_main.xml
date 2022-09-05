@@ -8,18 +8,20 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/tabLayout"
-        app:tabMode="fixed"
         app:tabGravity="fill"
-        app:tabIndicatorGravity="stretch"
-        app:tabSelectedTextColor="@color/white"
+        app:tabIndicator="@drawable/tab_indicator"
         app:tabIndicatorAnimationMode="elastic"
-        app:tabIndicator=""
+        app:tabIndicatorGravity="stretch"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/white" />
 
-
-        />
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
 
     <TextView
         android:layout_width="wrap_content"
