@@ -111,7 +111,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editPassSignIn" />
 
-            <ImageView
+            <com.facebook.login.widget.LoginButton
                 android:id="@+id/fbLoginBtn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"

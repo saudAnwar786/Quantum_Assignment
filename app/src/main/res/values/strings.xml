@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sign_in_account">Sign in to your</string>
     <string name="register_text"><u>Register Now</u></string>
+
+    <string name="facebook_app_id">2817154688594156</string>
+    <string name="fb_login_protocol_scheme">fb2817154688594156</string>
+
+
 </resources>
