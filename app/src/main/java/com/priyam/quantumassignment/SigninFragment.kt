@@ -126,6 +126,8 @@ class SigninFragment : Fragment() {
 
     private fun moveToHome() {
         Log.d("HOME", "moveToHome: arrived")
+        val intent = Intent (requireActivity(), HomeActivity::class.java)
+        startActivity(intent)
     }
 
     private fun getFacebookData(obj: JSONObject?) {
