@@ -1,7 +1,11 @@
 package com.priyam.quantumassignment.data.api
 
-import com.google.android.gms.common.api.Response
+
+import com.priyam.quantumassignment.BuildConfig
 import com.priyam.quantumassignment.data.model.APIResponse
+import retrofit2.http.GET
+import retrofit2.http.Query
+import retrofit2.Response
 
 interface NewsAPIService {
     @GET("v2/top-headlines")
