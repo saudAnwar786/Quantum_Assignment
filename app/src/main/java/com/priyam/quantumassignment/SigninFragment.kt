@@ -28,7 +28,6 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.json.JSONObject
-import java.lang.Exception
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
@@ -47,6 +46,10 @@ class SigninFragment : Fragment() {
 
     lateinit var callbackManager: CallbackManager
     private val EMAIL = "email"
+
+    var isEmailLogged: Boolean = false
+    var isGoogleLogged: Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,11 +80,21 @@ class SigninFragment : Fragment() {
 
         buttonSignin = view.findViewById(R.id.signInBtn)
         buttonSignin.setOnClickListener {
-            loginWithEmail()
+            if(isEmailLogged){
+                signOutEmail()
+            }else{
+                loginWithEmail()
+            }
+
         }
         googleImage = view.findViewById(R.id.googleLoginBtn)
         googleImage.setOnClickListener {
-            GooglesignIn()
+            if(isGoogleLogged){
+                signOutGoogle()
+            }else{
+                GooglesignIn()
+            }
+
         }
 
 
@@ -117,9 +130,6 @@ class SigninFragment : Fragment() {
 
 
         })
-
-
-
 
         return view
     }
@@ -207,6 +217,7 @@ class SigninFragment : Fragment() {
                         .addOnCompleteListener(requireActivity()) { task ->
                             if (task.isSuccessful) {
 
+                                isGoogleLogged = true
                                 val firebaseUser = auth.currentUser
                                 Toast.makeText(
                                     context,
@@ -272,7 +283,25 @@ class SigninFragment : Fragment() {
 
     }
 
+    private fun signOutEmail() {
+        // Firebase sign out
+        auth.signOut()
+        Toast.makeText(context, "Logged Out from email authentication", Toast.LENGTH_SHORT)
+            .show()
+        isGoogleLogged = false
 
+    }
+    private fun signOutGoogle() {
+
+
+        // Google sign out
+        googleSignInClient.signOut().addOnCompleteListener(requireActivity(),
+            OnCompleteListener<Void?> {
+                Toast.makeText(context, "Logged Out from Google Account", Toast.LENGTH_SHORT)
+                    .show()
+                isGoogleLogged = false
+            })
+    }
 }
 
 
