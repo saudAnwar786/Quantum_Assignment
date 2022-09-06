@@ -13,7 +13,7 @@ Retrofit - retroit makes SQLite database a lot easier by providing annotations
 
 MVVM architecture - MVVM design paterns seperates the data, domain and presentation layers. I have recently started working on MVVM design patterns which are useful for a clean project structure. Also, using MVVM the codes becomes globally readable and self-explanatory. 
 
-Dagger-Hilt = used for dependency injection. It supports the SOLID principle. It makes the code easily extensible. Also, it encourages sepearation of concern. 
+Dagger-Hilt = used for dependency injection. It supports the SOLID principle. It makes the code easily extensible. Also, it encourages sepearation of concern.It also makes dependency injection easier. 
 
 Coroutines = Kotlin Coroutines are used in the project to run some part of the code on the background thread and some on the main thread. It helps in multithreading and reduces time duration for api calls. 
 
