@@ -22,3 +22,7 @@ GsontoJSONconverter = used to create model classes with the help of JSON respons
 
 https://user-images.githubusercontent.com/65361533/188557896-7228fac0-0130-4ab6-8fab-4d19d4ee93eb.mp4
 
+
+
+https://user-images.githubusercontent.com/65361533/188558317-d45290f8-9450-4f72-bd44-b44000e454f1.mp4
+
