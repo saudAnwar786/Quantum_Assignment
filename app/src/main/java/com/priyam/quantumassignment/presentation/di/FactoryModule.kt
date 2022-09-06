@@ -19,18 +19,12 @@ class FactoryModule {
     fun provideNewsViewModelFactory(
         application: Application,
         getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase,
-//        getSearchedNewsUseCase: GetSearchedNewsUseCase
-//        saveNewsUseCase: SaveNewsUseCase,
-//        getSavedNewsUseCase: GetSavedNewsUseCase,
-//        deleteSavedNewsUseCase: DeleteSavedNewsUseCase
+        getSearchedNewsUseCase: GetSearchedNewsUseCase
     ): NewsViewModelFactory {
         return NewsViewModelFactory(
             application,
             getNewsHeadlinesUseCase,
-//            getSearchedNewsUseCase
-//            saveNewsUseCase,
-//            getSavedNewsUseCase,
-//            deleteSavedNewsUseCase
+            getSearchedNewsUseCase
         )
     }
 
