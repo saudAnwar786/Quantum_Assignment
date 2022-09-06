@@ -53,8 +53,8 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
             Log.i("MYTAG","came here ${article.title}")
             binding.tvTitle.text = article.title
             binding.tvDescription.text = article.description
-            binding.tvPublishedAt.text = article.publishedAt
-            binding.tvSource.text = article.source?.name
+            binding.tvPublishedAt.text = article.publishedAt.toString().substring(0,10)
+            binding.tvSource.text = article.source.name
 
             Glide.with(binding.ivArticleImage.context).
             load(article.urlToImage).

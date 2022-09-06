@@ -17,6 +17,7 @@
         android:id="@+id/rvNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#BDBDBD"
         android:padding="5dp"/>
 
 
