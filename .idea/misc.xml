@@ -5,11 +5,17 @@
       <map>
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/drawable/btn_background.xml" value="0.1855" />
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.1495" />
+        <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/drawable/ic_baseline_live_tv_24.xml" value="0.124" />
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/drawable/tab_indicator.xml" value="0.1" />
+        <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/activity_home.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/activity_main.xml" value="0.1734375" />
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/activity_sign_up.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/fragment_info.xml" value="0.23177083333333334" />
+        <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/fragment_news.xml" value="0.23177083333333334" />
+        <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/fragment_saved.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/fragment_signin.xml" value="0.1" />
         <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/layout/fragment_signup.xml" value="0.16" />
+        <entry key="..\:/Users/asus/Desktop/GITHUB PROJECTS/QuantumIT-assignment/app/src/main/res/menu/bottom_menu.xml" value="0.2" />
       </map>
     </option>
   </component>
