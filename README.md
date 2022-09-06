@@ -18,3 +18,7 @@ Dagger-Hilt = used for dependency injection. It supports the SOLID principle. It
 Coroutines = Kotlin Coroutines are used in the project to run some part of the code on the background thread and some on the main thread. It helps in multithreading and reduces time duration for api calls. 
 
 GsontoJSONconverter = used to create model classes with the help of JSON respnses.
+
+
+https://user-images.githubusercontent.com/65361533/188557896-7228fac0-0130-4ab6-8fab-4d19d4ee93eb.mp4
+
