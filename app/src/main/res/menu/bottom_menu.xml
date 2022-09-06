@@ -5,8 +5,5 @@
         android:id="@+id/newsFragment"
         android:icon="@drawable/ic_baseline_live_tv_24"
         android:title="News Headlines" />
-    <item
-        android:id="@+id/savedFragment"
-        android:icon="@drawable/ic_baseline_save_24"
-        android:title="Saved News" />
+
 </menu>
