@@ -16,7 +16,7 @@ import javax.inject.Inject
 class HomeActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: NewsViewModelFactory
-
+    @Inject
     lateinit var newsAdapter: NewsAdapter
     lateinit var viewModel: NewsViewModel
     private lateinit var binding: ActivityHomeBinding
