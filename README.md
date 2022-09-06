@@ -5,7 +5,7 @@ Firebase Authentication for login with:
 2.Google Sign In
 3. Facebook  Integration with facebook SDK
 
-Firebase provides all the major backend funcionality and is supported by Google. Morever, firebase backend are easy to be implemented and extended. Major features for absic app development are kept free or comes with minimal fees. 
+Firebase provides all the major backend functionality and is supported by Google. Morever, firebase backend are easy to be implemented and extended. Major features for absic app development are kept free or comes with minimal fees. 
 
 Glide - Used glide library to load images from URL. 
 
@@ -18,6 +18,8 @@ Dagger-Hilt = used for dependency injection. It supports the SOLID principle. It
 Coroutines = Kotlin Coroutines are used in the project to run some part of the code on the background thread and some on the main thread. It helps in multithreading and reduces time duration for api calls. 
 
 GsontoJSONconverter = used to create model classes with the help of JSON responses.
+
+
 
 
 https://user-images.githubusercontent.com/65361533/188557896-7228fac0-0130-4ab6-8fab-4d19d4ee93eb.mp4
