@@ -19,6 +19,12 @@ Coroutines = Kotlin Coroutines are used in the project to run some part of the c
 
 GsontoJSONconverter = used to create model classes with the help of JSON responses.
 
+ViewModels and ViewModelFactory = They are intermediates between View (Activity/Fragment) and Repositry. Helps in seperating data from the views and the data is not dependent on onCreate and onCreateView methods. So, it can bear configuration changes also.
+
+Navigation Archietecture = It is a jetpack Compose functionality which makes it quite easier to navigate between fragments. 
+
+WebView = To display the news articles in a detailed way from the websites of the news source.
+
 
 
 
